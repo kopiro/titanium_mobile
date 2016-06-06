@@ -150,7 +150,7 @@
     return NULL;
 }
 
--(NSArray*)getEventsBeteenDates:(id)args
+-(NSArray*)getEventsBetweenDates:(id)args
 {
     ENSURE_ARG_COUNT(args, 2);
     NSString* start = nil;
