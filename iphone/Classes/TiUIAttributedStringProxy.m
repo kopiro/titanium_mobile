@@ -184,6 +184,14 @@
             [paragraphStyle setLineBreakMode:[num unsignedIntegerValue]];
             attrValue = paragraphStyle;
             break;
+
+        case AttributeNameLineHeight:
+            attrName = NSParagraphStyleAttributeName;
+            NSMutableParagraphStyle *paragraphStyleLh = [[[NSMutableParagraphStyle alloc] init] autorelease];
+            NSNumber* lh = [TiUtils numberFromObject:value];
+            [paragraphStyleLh setLineSpacing:[lh floatValue]];
+            attrValue = paragraphStyleLh;
+            break;
 	}
 	if(errorMessage != nil) {
 		DebugLog(@"[WARN] Ti.UI.%@", errorMessage);
