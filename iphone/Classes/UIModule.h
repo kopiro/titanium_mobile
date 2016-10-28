@@ -276,6 +276,7 @@
 @property (nonatomic,readonly) NSNumber* ATTRIBUTE_LINE_BREAK_BY_TRUNCATING_HEAD;
 @property (nonatomic,readonly) NSNumber* ATTRIBUTE_LINE_BREAK_BY_TRUNCATING_TAIL;
 @property (nonatomic,readonly) NSNumber* ATTRIBUTE_LINE_BREAK_BY_TRUNCATING_MIDDLE;
+@property (nonatomic,readonly) NSNumber* ATTRIBUTE_LINE_HEIGHT;
 
 @property (nonatomic,readonly) NSString * ATTRIBUTE_LETTERPRESS_STYLE;
 
