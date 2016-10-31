@@ -489,6 +489,21 @@ properties:
     osver: {ios: {min: "7.0"}}
     permission: read-only
 
+  - name: ATTRIBUTE_LINE_HEIGHT
+    summary: |
+        Use with <Attribute.type> to specify the line height.
+    description: |
+        The distance between the bottom of one line fragment and top of next 
+        (applied between lines in the same container).
+
+        Set <Attribute.value> to a Number value.
+
+        See <Attribute> for more information on type modes.
+    type: Number
+    platforms: [iphone, ipad, android]
+    since: "6.1.0"
+    permission: read-only
+
   - name: ATTRIBUTE_UNDERLINE_STYLE_NONE
     summary: |
         Use with <Attribute.value> to not draw a line.
