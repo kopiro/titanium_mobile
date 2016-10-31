@@ -32,6 +32,8 @@ import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import android.text.style.SuperscriptSpan;
 import android.text.style.SubscriptSpan;
+import android.text.style.LineHeightSpan;
+import android.graphics.Paint.FontMetricsInt;
 
 @Kroll.proxy(creatableInModule=UIModule.class, propertyAccessors = {
 	TiC.PROPERTY_ATTRIBUTES,
@@ -207,6 +209,10 @@ public class AttributedStringProxy extends KrollProxy
 										}
 										results.putBoolean(TiC.PROPERTY_HAS_LINK, true);
 										break;
+									case UIModule.ATTRIBUTE_LINE_HEIGHT:
+										spannableText.setSpan(new TiLineHeightSpan(attrValue), range[0], range[0] + range[1], 
+										Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+										break;
 								}
 							}
 						}
@@ -223,5 +229,20 @@ public class AttributedStringProxy extends KrollProxy
 	public String getApiName()
 	{
 		return "Ti.UI.AttributedString";
+	}
+
+	private static class TiLineHeightSpan implements LineHeightSpan 
+	{
+		private final int height;
+
+		public TiLineHeightSpan(int height) {
+			this.height = height;
+		}
+
+		@Override
+		public void chooseHeight(CharSequence text, int start, int end, int spanstartv, int v, Paint.FontMetricsInt fm) {
+			fm.ascent -= (this.height / 2);
+			fm.descent += (this.height / 2);
+		}
 	}
 }
