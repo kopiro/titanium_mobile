@@ -38,8 +38,7 @@ typedef enum {
 	AttributeNameStrikethroughColor,
 	AttributeNameObliqueness,
 	AttributeNameExpansion,
-   AttributeNameLineBreak,
-   AttributeNameLineHeight
+    AttributeNameLineBreak, // deprecated
 } AttributeName;
 
 #pragma mark - Not exposed to JS. Internal Use Only.
